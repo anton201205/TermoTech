@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Thermos - Productos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+   <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="logo2.png" alt="Logo Termo Tech" class="navbar-logo"> 
+                Termo Tech
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="productos.html">Productos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="personalizacion.html">Personalización</a></li>
+                    <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section id="productos" class="fade-in">
+        <div class="container">
+            <h2 class="text-center section-title">Nuestros Productos</h2>
+            <div class="row">
+
+                <div class="col-md-4 mb-4">
+                    <div class="card product-card">
+                        <div class="product-img-wrapper">
+                            <span class="product-badge">ECO</span>
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <div class="card-body text-center">
+                            <h4 class="fw-bold mb-3">Eco Bateria</h4>
+                            <p class="text-muted">Batería recargable con hasta 60 días de uso. 100% libre de plásticos desechables.</p>
+                            <h3 class="text-success fw-bold">S/. 8</h3>
+                            
+                            <div class="d-grid gap-2 mt-4">
+                                <a href="contacto.html" class="btn btn-primary">
+                                    <i class="fas fa-shopping-bag"></i> Obtener
+                                </a>
+                                <button class="btn btn-outline-success btn-sm">
+                                    <i class="fas fa-gem"></i> Canjea tus puntos
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <div class="card product-card">
+                        <div class="product-img-wrapper">
+                            <span class="product-badge">TECH</span>
+                            <i class="fas fa-microchip"></i>
+                        </div>
+                        <div class="card-body text-center">
+                            <h4 class="fw-bold mb-3">Termo Tech</h4>
+                            <p class="text-muted">Personalizable, Pantalla LED que muestra temperatura y cantidad de líquido en tiempo real.</p>
+                            <h3 class="text-success fw-bold">S/. no definido</h3> <div class="d-grid gap-2 mt-4">
+                                <a href="personalizacion.html" class="btn btn-primary">
+                                    <i class="fas fa-magic"></i> Obtener y Personalizar
+                                </a>
+                                <button class="btn btn-outline-success btn-sm">
+                                    <i class="fas fa-gem"></i> Canjea tus puntos
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <div class="card product-card">
+                        <div class="product-img-wrapper">
+                            <span class="product-badge">PREMIUM</span>
+                            <i class="fas fa-crown"></i>
+                        </div>
+                        <div class="card-body text-center">
+                            <h4 class="fw-bold mb-3">Accesorios</h4>
+                            <p class="text-muted">Mejora tu termo, explora los diversos accesorios que tenemos</p>
+                            <h3 class="text-success fw-bold">S/. [Ver opciones]</h3>
+                            
+                            <div class="d-grid gap-2 mt-4">
+                                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#accesoriosModal">
+                                    <i class="fas fa-box"></i> Obtener
+                                </button>
+                                <button class="btn btn-outline-success btn-sm">
+                                    <i class="fas fa-gem"></i> Canjea tus puntos
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <div class="modal fade" id="accesoriosModal" tabindex="-1" aria-labelledby="accesoriosModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header bg-dark text-white">
+                    <h5 class="modal-title" id="accesoriosModalLabel"><i class="fas fa-crown"></i> Accesorios Premium</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <p class="lead text-center mb-4">Personaliza y mejora la funcionalidad de tu Termo Tech.</p>
+                    
+                    <div class="row row-cols-1 row-cols-md-2 g-4">
+                        
+                        <div class="col">
+                            <div class="card h-100 border-primary">
+                                <div class="card-body text-center">
+                                    <i class="fas fa-dumbbell fa-3x text-primary mb-3"></i>
+                                    <h5 class="card-title fw-bold">Tapa Deportiva (Sport Cap)</h5>
+                                    <p class="card-text text-muted">Tapa de boca ancha con asa de transporte. Perfecta para el gimnasio.</p>
+                                    <h4 class="text-primary fw-bold">S/. 15</h4>
+                                    <button class="btn btn-primary w-100 mt-2"><i class="fas fa-cart-plus"></i> Añadir</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="card h-100 border-info">
+                                <div class="card-body text-center">
+                                    <i class="fas fa-shield-alt fa-3x text-info mb-3"></i>
+                                    <h5 class="card-title fw-bold">Funda Protectora de Silicona</h5>
+                                    <p class="card-text text-muted">Máxima protección contra golpes y caídas. Disponible en varios colores.</p>
+                                    <h4 class="text-info fw-bold">S/. 25</h4>
+                                    <button class="btn btn-info text-white w-100 mt-2"><i class="fas fa-cart-plus"></i> Añadir</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col">
+                            <div class="card h-100 border-success">
+                                <div class="card-body text-center">
+                                    <i class="fas fa-battery-full fa-3x text-success mb-3"></i>
+                                    <h5 class="card-title fw-bold">Base de Carga Rápida</h5>
+                                    <p class="card-text text-muted">Carga la Eco Batería sin cables. Máxima comodidad en tu escritorio.</p>
+                                    <h4 class="text-success fw-bold">S/. 35</h4>
+                                    <button class="btn btn-success w-100 mt-2"><i class="fas fa-cart-plus"></i> Añadir</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col">
+                            <div class="card h-100 border-warning">
+                                <div class="card-body text-center">
+                                    <i class="fas fa-filter fa-3x text-warning mb-3"></i>
+                                    <h5 class="card-title fw-bold">Filtro de Infusión de Acero</h5>
+                                    <p class="card-text text-muted">Perfecto para tés, infusiones de frutas y hierbas. 100% acero inoxidable.</p>
+                                    <h4 class="text-warning fw-bold">S/. 12</h4>
+                                    <button class="btn btn-warning text-dark w-100 mt-2"><i class="fas fa-cart-plus"></i> Añadir</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Seguir Explorando</button>
+                    <button type="button" class="btn btn-success"><i class="fas fa-credit-card"></i> Finalizar Compra</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="container">
+            <div class="social-icons mb-4">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+            <p class="mb-0">&copy; 2025 Termo Tech. Innovación Sostenible.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

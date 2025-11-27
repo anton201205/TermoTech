@@ -1,0 +1,560 @@
+:root {
+    --verde-principal: #2ecc71;
+    --verde-oscuro: #27ae60;
+    --gris-tech: #505659;
+    --gris-claro: #95a5a6;
+    --azul-agua: #3498db;
+    --blanco: #ffffff;
+    --morado-claro: #9b59b6; /* Se mantiene la variable, pero se usa 'white' a continuación */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+    background-color: var(--blanco);
+}
+
+/* NAVBAR */
+/* Ejemplo para styles.css */
+.navbar-logo {
+    height: 30px; /* Ajusta este valor según el tamaño deseado */
+    width: auto;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+/* Y quizás ajustar el tamaño del texto del título si es necesario */
+.navbar-brand {
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+/* Y si el fondo del hero es oscuro, ajusta el color de la nueva frase */
+.hero-content h2 {
+    color: #000000 !important; /* Color verde de ejemplo */
+}
+
+.navbar {
+    background: linear-gradient(135deg, var(--verde-principal), var(--azul-agua));
+    padding: 1rem 0;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.navbar.scrolled {
+    padding: 0.5rem 0;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+}
+
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.nav-link {
+    color: var(--blanco) !important;
+    font-weight: 600;
+    margin: 0 0.5rem;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    width: 0;
+    height: 3px;
+    background: var(--blanco);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-link:hover::after, .nav-link.active::after {
+    width: 80%;
+}
+
+.nav-link:hover {
+    transform: translateY(-2px);
+}
+
+/* SECCIONES GENERALES */
+section {
+    padding: 6rem 0; /* Aumentado un poco para compensar el header fijo */
+}
+
+/* SECCIÓN HERO (Solo Home) */
+.hero-section {
+    background: linear-gradient(135deg, var(--azul-agua), var(--verde-principal));
+    min-height: 80vh; /* Ocupa más pantalla */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--blanco);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    margin-top: -1px; /* Corrige linea blanca a veces visible */
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+    animation: moveBackground 20s linear infinite;
+}
+
+@keyframes moveBackground {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(50px, 50px); }
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    animation: fadeInUp 1s ease;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* PRODUCTOS */
+#productos {
+    background: linear-gradient(to bottom, var(--blanco), #f8f9fa);
+}
+
+.product-card {
+    border: none;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: all 0.4s ease;
+    margin-bottom: 2rem;
+    background: var(--blanco);
+}
+
+.product-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 20px 40px rgba(46, 204, 113, 0.3);
+}
+
+.product-img-wrapper {
+    height: 250px;
+    background: linear-gradient(135deg, var(--verde-principal), var(--azul-agua));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.product-img-wrapper i {
+    font-size: 5rem;
+    color: var(--blanco);
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+.product-card .card-body {
+    padding: 2rem;
+}
+
+.product-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: var(--verde-oscuro);
+    color: var(--blanco);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: 700;
+    animation: bounceIn 1s ease;
+}
+
+@keyframes bounceIn {
+    0% { transform: scale(0); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+/* NOSOTROS */
+#nosotros {
+    background: linear-gradient(to bottom, #f8f9fa, var(--blanco));
+}
+
+.feature-box {
+    padding: 3rem 2rem;
+    background: var(--blanco);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    transition: all 0.4s ease;
+    margin-bottom: 2rem;
+    border: 3px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.feature-box::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(46, 204, 113, 0.1), transparent);
+    transform: rotate(45deg);
+    transition: all 0.6s ease;
+}
+
+.feature-box:hover::before {
+    left: 100%;
+}
+
+.feature-box:hover {
+    transform: translateY(-10px);
+    border-color: var(--verde-principal);
+    box-shadow: 0 15px 40px rgba(46, 204, 113, 0.2);
+}
+
+.feature-icon {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 1.5rem;
+    background: linear-gradient(135deg, var(--verde-principal), var(--azul-agua));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: rotate360 10s linear infinite;
+}
+
+@keyframes rotate360 {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.feature-icon i {
+    font-size: 3rem;
+    color: var(--blanco);
+    animation: pulse 2s ease-in-out infinite;
+}
+
+/* PERSONALIZACIÓN */
+#personalizacion {
+    background: linear-gradient(135deg, var(--gris-tech), var(--gris-claro));
+    color: var(--blanco);
+    min-height: 80vh; /* Ajuste para que se vea bien en página sola */
+}
+
+.customization-card {
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border: 2px solid rgba(255,255,255,0.2);
+    transition: all 0.3s ease;
+}
+
+.customization-card:hover {
+    background: rgba(255,255,255,0.2);
+    transform: scale(1.05);
+}
+
+/* FORMULARIO */
+#formulario {
+    background: linear-gradient(to bottom, var(--blanco), #e8f5e9);
+}
+
+.form-control, .form-select {
+    border-radius: 15px;
+    border: 2px solid var(--gris-claro);
+    padding: 0.8rem;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--verde-principal);
+    box-shadow: 0 0 0 0.2rem rgba(46, 204, 113, 0.25);
+}
+
+.btn-submit {
+    background: linear-gradient(135deg, var(--verde-principal), var(--verde-oscuro));
+    color: var(--blanco);
+    border: none;
+    padding: 1rem 3rem;
+    border-radius: 50px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-submit::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.btn-submit:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.btn-submit:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(46, 204, 113, 0.4);
+}
+
+/* FOOTER */
+footer {
+    background: var(--gris-tech);
+    color: var(--blanco);
+    padding: 3rem 0;
+    text-align: center;
+}
+
+.social-icons a {
+    color: var(--blanco);
+    font-size: 2rem;
+    margin: 0 1rem;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.social-icons a:hover {
+    color: var(--verde-principal);
+    transform: translateY(-5px) rotate(10deg);
+}
+
+/* ANIMACIONES GENERALES */
+.fade-in {
+    animation: fadeIn 1s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.section-title {
+    font-weight: 700;
+    color: var(--gris-tech);
+    margin-bottom: 3rem;
+    position: relative;
+    display: inline-block;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(to right, var(--verde-principal), var(--azul-agua));
+    border-radius: 2px;
+}
+
+/* ... (Tus estilos anteriores) ... */
+
+/* ESTILOS DEL PERSONALIZADOR 3D */
+#personalizacion-3d-section {
+    background: linear-gradient(135deg, var(--gris-tech), var(--gris-claro));
+    padding: 4rem 0;
+    min-height: 100vh;
+}
+
+.customizer-container {
+    background: var(--blanco);
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 600px;
+}
+
+#canvas-container {
+    flex: 2;
+    background: radial-gradient(circle at center, #f0f0f0 0%, #dcdcdc 100%);
+    position: relative;
+    min-height: 400px;
+    cursor: grab;
+}
+
+#canvas-container:active {
+    cursor: grabbing;
+}
+
+.controls-panel {
+    flex: 1;
+    padding: 2.5rem;
+    background: var(--blanco);
+    border-left: 1px solid #eee;
+    min-width: 300px;
+}
+
+#loading-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: bold;
+    color: var(--gris-tech);
+}
+
+/* Botones de colores */
+.color-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+.color-btn:hover {
+    transform: scale(1.1);
+}
+
+.color-btn.active {
+    border-color: var(--gris-tech);
+    transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+    .customizer-container {
+        flex-direction: column;
+    }
+    .controls-panel {
+        border-left: none;
+        border-top: 1px solid #eee;
+    }
+    #canvas-container {
+        height: 400px; /* Altura fija en móviles */
+    }
+}
+
+/* --- ESTILOS ESPECÍFICOS DE LA PERSONALIZACIÓN (styles.css) --- */
+
+/* Contenedor del personalizador (para el layout) */
+.customizer-container {
+    display: flex;
+    gap: 30px;
+    margin-top: 30px;
+    background-color: #f8f9fa; /* Fondo claro para contraste */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+#canvas-container {
+    flex-grow: 1;
+    min-height: 500px;
+    background-color: #e0e0e0;
+    border-radius: 8px;
+    position: relative;
+}
+
+.controls-panel {
+    flex-shrink: 0;
+    width: 350px;
+    padding: 15px;
+    background-color: var(--blanco);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+#loading-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--gris-tech);
+}
+
+/* 🟢 Estilos para los botones de color (Cuerpo y Tapa) 🟢 */
+
+.color-btn,
+.lid-color-btn {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%; /* Los hacemos circulares */
+    border: 3px solid transparent;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Efecto al pasar el ratón */
+.color-btn:hover,
+.lid-color-btn:hover {
+    transform: scale(1.1);
+    opacity: 0.9;
+}
+
+/* Estado activo: Borde que indica que está seleccionado */
+.color-btn.active,
+.lid-color-btn.active {
+    border: 3px solid var(--azul-agua); /* Borde azul brillante */
+    box-shadow: 0 0 10px var(--azul-agua);
+    transform: scale(1.05);
+}
+
+/* Estilo para el input de color */
+.form-control-color {
+    height: 45px;
+    padding: 0;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* Media Query para responsividad en pantallas pequeñas */
+@media (max-width: 992px) {
+    .customizer-container {
+        flex-direction: column;
+    }
+    .controls-panel {
+        width: 100%;
+    }
+    #canvas-container {
+        min-height: 400px;
+    }
+}
